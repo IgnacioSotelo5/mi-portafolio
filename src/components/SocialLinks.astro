@@ -1,0 +1,13 @@
+---
+interface Props{
+    href: string
+    class: string
+}
+const {href, class: className} = Astro.props
+---
+<a 
+href={href} 
+target="_blank" 
+class={`${className} flex justify-center items-center rounded-full ring-1 ring-slate-200 dark:bg-transparent dark:hover:ring-0 size-fit p-1 transition-all duration-200`}>
+    <slot />
+</a>

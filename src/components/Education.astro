@@ -1,0 +1,32 @@
+---
+import EducationItem from "./EducationItem.astro"
+import CapIcon from "./icons/CapIcon.astro"
+
+const EDUCATION = [
+    {
+        title: "Desarrollo Web Fullstack",
+        date: "2023-2024",
+        description: "Programa Vértice - Impulsado por el Cluster Tecnológico de Tandil. Durante este intensivo de dos años, desarrollé habilidades avanzadas en la creación de interfaces gráficas y en la implementación de estructuras de backend y bases de datos completas necesarias para aplicaciones web robustas.",
+        institution: "Cluster Tecnológico Tandil"
+    }
+]
+
+---
+
+<div class="max-w-xl flex flex-col gap-1">
+    <div class="text-3xl font-semibold gap-3 flex items-center">
+        <CapIcon class="size-8" />
+        <h2 class="">Educación</h2>
+    </div>
+    <div>
+        <ol class='relative mt-16 border-s border-slate-700'>
+            {
+                EDUCATION.map((course) => (
+                   <EducationItem {...course} />
+                ))
+            }
+        </ol>
+    </div>
+</div>
+
+

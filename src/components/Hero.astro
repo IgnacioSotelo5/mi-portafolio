@@ -1,0 +1,171 @@
+---
+import Badge from "./Badge.astro";
+import Pills from "./Pills.astro";
+
+import ReactIcon from '@/components/icons/logos/React.astro'
+import TailwindIcon from '@/components/icons/logos/TailwindCSS.astro'
+import NextIcon from '@/components/icons/logos/Next.astro'
+import HTMLIcon from '@/components/icons/logos/HTML.astro'
+import CSSIcon from '@/components/icons/logos/CSS.astro'
+import NestIcon from '@/components/icons/logos/NestJS.astro'
+import NodeIcon from '@/components/icons/logos/Node.astro'
+import TypeORMIcon from '@/components/icons/logos/TypeORM.astro'
+import JavascriptIcon from '@/components/icons/logos/Javascript.astro'
+import TypescriptIcon from '@/components/icons/logos/Typescript.astro'
+import AstroIcon from '@/components/icons/logos/AstroIcon.astro'
+import MySQLIcon from '@/components/icons/logos/MySQL.astro'
+import SocialLinks from "./SocialLinks.astro";
+import GithubIcon from "./icons/logos/Github.astro";
+import LinkedInIcon from "./icons/logos/Linkedin.astro";
+import Arg from "./icons/Arg.astro";
+
+interface Skill{
+    text: string
+    icon: astroHTML.JSX.Element
+    bg: string
+    category: 'frontend' | 'backend' | 'languages'
+}
+
+const SKILLS: Skill[] = [
+    {
+        text: 'JavaScript',
+        icon: JavascriptIcon,
+        bg: 'bg-yellow-500/25',
+        category: 'languages'
+    },
+    {
+        text: 'TypeScript',
+        icon: TypescriptIcon,
+        bg: 'bg-blue-500/25',
+        category: 'languages'
+    },
+    {
+        text: 'HTML',
+        icon: HTMLIcon ,
+        bg: 'bg-orange-500/25',
+        category: 'frontend'
+    },
+    {
+        text: 'CSS',
+        icon: CSSIcon,
+        bg: 'bg-blue-700/25',
+        category: 'frontend'
+        
+    },
+    {
+        text: 'TailwindCSS',
+        icon: TailwindIcon,
+        bg: 'bg-sky-500/25',
+        category: 'frontend'
+    },
+    {
+        text: 'React',
+        icon: ReactIcon,
+        bg: 'bg-blue-500/25',
+        category: 'frontend'
+    },
+    {
+        text: 'NextJS',
+        icon: NextIcon,
+        bg: 'bg-gray-800',
+        category: 'frontend'
+    },
+    {
+        text: 'Astro',
+        icon: AstroIcon,
+        bg: 'bg-purple-500/25',
+        category: 'frontend'
+        
+    },
+    {
+        text: 'NodeJS',
+        icon: NodeIcon,
+        bg: 'bg-green-500/25',
+        category: 'backend'
+    },
+    {
+        text: 'NestJS',
+        icon: NestIcon,
+        bg: 'bg-red-500/25',
+        category: 'backend'
+    },
+    {
+        text: 'TypeORM',
+        icon: TypeORMIcon,
+        bg: 'bg-orange-600/25',
+        category: 'backend'
+    },
+    {
+        text: 'MySQL',
+        icon: MySQLIcon,
+        bg: 'bg-slate-500/25',
+        category: 'backend'
+    },
+]
+---
+
+    <div class="max-w-xl flex flex-col gap-1">
+        <div class="flex items-center">
+            <img src="./avatar.webp" alt="Imagen del autor" class="size-32">
+            <div class="flex flex-col gap-4">
+                <a class="cursor-pointer" target="_blank" href="https://www.linkedin.com/in/ignaciosotelo8/">
+                    <Badge>
+                        Disponible para trabajar
+                    </Badge>
+                </a>
+                <div class="flex gap-x-3">
+                    <SocialLinks class="dark:hover:bg-white" href="https://github.com/IgnacioSotelo5">
+                        <GithubIcon class="size-[18px] dark:hover:fill-black duration-300" />
+                    </SocialLinks>
+                    <SocialLinks class="dark:hover:bg-blue-500" href="https://www.linkedin.com/in/ignaciosotelo8/">
+                        <LinkedInIcon class="size-[18px] p-[1px] dark:hover:text-white duration-300" />
+                    </SocialLinks>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1 class="text-4xl sm:text-5xl font-bold mb-2">
+                Hola, soy Ignacio
+            </h1>
+        </div>
+        <div>
+            <h2 class="text-xl text-pretty w-full tracking-[-0.036em] inline">
+                Soy un <strong class="text-foreground-250">Desarrollador Web</strong>, de Argentina <Arg class="align-[-4px] inline-block" />. Comprometido con el aprendizaje continuo y la mejora constante, me considero una persona curiosa, proactiva y enfocada en generar valor mediante la colaboración en proyectos.
+            </h2>
+
+        </div>
+    </div>
+    <div class="mt-12 flex flex-col gap-y-4">
+        <h3 class="text-2xl font-semibold">Stack</h3>
+            <div class="flex flex-col gap-2">
+                <h4 class="text-lg font-normal">Lenguajes de Programación</h4>
+                <nav class="flex gap-x-3">
+                    {
+                        SKILLS.filter(skill => skill.category === 'languages').map((skill) => (
+                            <Pills className={`skill-item ${skill.bg}`} skill={skill} />
+                        ))
+                    }
+                </nav>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h4 class="text-lg font-normal">Frontend</h4>
+                <nav class="flex flex-wrap gap-x-3 gap-y-2">
+                    {
+                        SKILLS.filter(skill => skill.category === 'frontend').map((skill) => (
+                            <Pills className={`skill-item ${skill.bg}`} skill={skill} />
+                        ))
+                    }
+                </nav>
+            </div>
+            <div class="flex flex-col gap-2">
+                <h4 class="text-lg font-normal">Backend</h4>
+                <nav class="flex flex-wrap gap-y-2 gap-x-3">
+                    {
+                        SKILLS.filter(skill => skill.category === 'backend').map((skill) => (
+                        <Pills className={`skill-item ${skill.bg}`} skill={skill} />
+                        ))
+                    }
+                </nav>
+        </div>
+        
+    </div>

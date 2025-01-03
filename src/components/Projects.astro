@@ -1,0 +1,25 @@
+---
+import BracketsIcon from "./icons/Brackets.astro";
+import ProjectCard from "./ProjectCard.astro";
+
+const PROJECTS = [
+    {
+        title: 'Dynamic Slug - Acortador de enlaces',
+        img: 'project-url-short1.webp',
+        description: 'Plataforma integral para la gestión de enlaces, ofreciendo manejo de sesiones, acortamiento de URLs, generación de códigos QR y análisis de métricas. Desarrollada utilizando React, NestJS y TypeScript.',
+        tags: ['React', 'TypeScript', 'TailwindCSS', 'NestJS', 'MySQL', 'TypeORM']
+    },
+]
+---
+
+<div class="flex items-center gap-3 text-3xl font-semibold">
+    <BracketsIcon class="size-8" />
+    <h2>Proyectos</h2>
+</div>
+<ul class="w-full relative mt-12 grid lg:place-content-start place-items-center place-content-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+    {
+        PROJECTS.map(({title, img, description})=> (
+            <ProjectCard title={title} img={img} description={description} />
+        ))
+    }
+</ul>

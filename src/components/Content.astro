@@ -1,0 +1,25 @@
+---
+
+import Education from "./Education.astro";
+import Hero from "./Hero.astro";
+import Projects from "./Projects.astro";
+import SectionContainer from "./SectionContainer.astro";
+
+---
+
+<main class="px-4">
+    <SectionContainer id="resumen" class="py-16 md:py-32">
+        <Hero />
+    </SectionContainer>
+    <div class="space-y-24">
+        <SectionContainer class="mt-12" id="educacion">
+            <Education />
+        </SectionContainer>
+        <SectionContainer id="proyectos">
+            <Projects />
+        </SectionContainer>
+        <SectionContainer id="sobre-mi">
+            <Projects />
+        </SectionContainer>
+    </div>
+</main>

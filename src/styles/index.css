@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --text-foreground-color: #f2ddcc
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@layer components{
+    .text-highlight{
+        color: var(--text-foreground-color);
+    }
+
+    .skill-item{
+        @apply text-white flex items-center px-2 gap-2 py-0.5 text-sm rounded-full
+    }
+
+    .nav-link{
+        @apply before:bg-foreground-200 text-sm dark:text-slate-200 rounded-md relative block p-2 transition-all duration-300 hover:text-blue-500 dark:hover:text-foreground-200
+    }
+
+    .nav-link::before { 
+        content: ''; 
+        @apply relative block w-0 h-[2px] top-[22px] bg-foreground-200 transition-all duration-300; 
+    } 
+    .nav-link:hover::before { 
+        @apply w-full; 
+    }
+
+}
+
+
+@layer utilities {
+    .animate-nav-shadown {
+        @apply animate-navShadown;
+        animation-timeline: scroll();
+        animation-range: 0 500px;
+    }
+}
