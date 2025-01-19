@@ -1,25 +1,39 @@
 ---
 
-import Education from "./Education.astro";
-import Hero from "./Hero.astro";
-import Projects from "./Projects.astro";
-import SectionContainer from "./SectionContainer.astro";
-
+import About from "@/components/About.astro";
+import Education from "@/components/Education.astro";
+import Hero from "@/components/Hero.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Banner from "@/components/Banner.astro";
+import Contact from "./Contact.astro";
+import AstroIcon from "./icons/logos/AstroIcon.astro";
 ---
 
-<main class="px-4">
-    <SectionContainer id="resumen" class="py-16 md:py-32">
-        <Hero />
-    </SectionContainer>
-    <div class="space-y-24">
-        <SectionContainer class="mt-12" id="educacion">
+<main>
+    <div class="px-4">
+        <SectionContainer id="resumen" class="py-16 md:py-32">
+            <Hero />
+        </SectionContainer>
+        <div class="space-y-24">
+            <SectionContainer class="mt-12" id="educacion">
             <Education />
-        </SectionContainer>
-        <SectionContainer id="proyectos">
-            <Projects />
-        </SectionContainer>
-        <SectionContainer id="sobre-mi">
-            <Projects />
-        </SectionContainer>
+            </SectionContainer>
+            <SectionContainer id="proyectos">
+                <Projects />
+            </SectionContainer>
+            <SectionContainer id="sobre-mi">
+                <About />
+            </SectionContainer>
+        </div>
     </div>
+    <Banner />
+    <SectionContainer class="bg-slate-900/50 min-w-full py-28 min-h-40 relative" id="contacto">
+        <Contact />
+    </SectionContainer>
+    <SectionContainer class="bg-slate-900/50 py-4 min-w-full">
+        <a target="_blank" href="https://astro.build/" class="cursor-pointer flex place-content-center">
+            <p class="opacity-70 text-xs flex items-center gap-2">Made with <span class="grayscale"><AstroIcon class="size-6"/></span></p>
+        </a>
+    </SectionContainer>
 </main>

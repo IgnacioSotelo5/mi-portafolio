@@ -13,21 +13,21 @@ interface Props{
 const {title, img, href, description} = Astro.props
 ---
 
-<li class="flex group max-w-sm w-fit rounded-lg md:shadow shadow-white/10">
+<li class="flex group max-w-xs rounded-lg shadow-sm shadow-white/10">
     <a class="cursor-pointer" href={href}>
-        <div class="overflow-hidden min-h- h-fit rounded-lg shadow relative">
+        <div class="overflow-hidden rounded-lg shadow relative min-h-fit h-fit">
             <img loading="lazy" class="rounded-t-lg md:rounded-lg w-full h-fit md:min-h-[225px]" src={img} alt="" />
-            <div class="md:absolute bottom-0 top-52 left-0 right-0 rounded-b-lg dark:bg-gray-900/60 md:invisible md:opacity-0 transition-all duration-700 ease-in-out group-hover:visible group-hover:opacity-100 group-hover:top-0 group-hover:backdrop-blur-sm">
+            <div class="md:absolute rounded-b-lg transform md:translate-y-full dark:bg-gray-900/60 md:invisible md:opacity-0 transition-all duration-500 ease-in-out group-hover:visible group-hover:opacity-100 md:group-hover:-translate-y-full md:group-hover:backdrop-blur-sm will-change-auto">
                 <div class="p-5 flex flex-col justify-between h-full">
                     <h5 class="mb-2 md:text-base text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">{title}</h5>
                     <p class="mb-3 text-sm text-pretty font-normal text-gray-700 dark:text-gray-400">{description}</p>
                     <div class="flex items-center">
-                        <a href="https://github.com/IgnacioSotelo5/dynamic-slug" target="_blank" class="group/item inline-flex gap-x-2 items-center px-3 py-1.5 text-sm font-medium text-white rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-transparent dark:hover:text-indigo-600 dark:hover:fill-indigo-600 dark:focus:ring-slate-800">
-                            <Github class="size-5 group-hover/item:fill-current" />
+                        <a href="https://github.com/IgnacioSotelo5/dynamic-slug" target="_blank" class="group/item inline-flex gap-x-2 items-center px-3 py-1.5 text-sm font-medium text-white rounded-md transition duration-500 ease-in-out hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-transparent dark:hover:text-indigo-600 dark:hover:fill-indigo-600 dark:focus:ring-slate-800">
+                            <Github class="w-5 h-5 group-hover/item:fill-current" />
                             Código
                         </a>
-                        <a href="" class="group/item inline-flex gap-x-2 items-center px-3 py-1.5 text-sm font-medium text-white rounded-md hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-transparent dark:hover:text-indigo-600 dark:hover:fill-indigo-600 dark:focus:ring-slate-800">
-                            <LinkIcon class="size-5 group-hover/item:text-current" />
+                        <a href="" class="group/item inline-flex gap-x-2 items-center px-3 py-1.5 text-sm font-medium text-white rounded-md transition duration-500 ease-in-out hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:bg-transparent dark:hover:text-indigo-600 dark:hover:fill-indigo-600 dark:focus:ring-slate-800">
+                            <LinkIcon class="w-5 h-5 group-hover/item:text-current" />
                             Preview
                         </a>
                     </div>
@@ -36,3 +36,4 @@ const {title, img, href, description} = Astro.props
         </div>
     </a>
 </li>
+

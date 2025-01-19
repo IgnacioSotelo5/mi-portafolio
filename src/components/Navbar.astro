@@ -1,9 +1,34 @@
+---
+const ITEMS = [
+    {   
+        text: 'Educación',
+        label: 'educacion',
+        url: '#educacion'
+    },
+    {   
+        text: 'Proyectos',
+        label: 'proyectos',
+        url: '#proyectos'
+    },
+    {   
+        text: 'Sobre mi',
+        label: 'sobre-mi',
+        url: '#sobre-mi'
+    },
+    {   
+        text: 'Contacto',
+        label: 'contacto',
+        url: '#contacto'
+    },
+]
+---
 <header class="h-8 fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
     <nav class="flex items-center px-3 font-medium animate-nav-shadown">
-            <a class="nav-link" href="#educacion">Educacion</a>
-            <a class="nav-link"href="#proyectos">Proyectos</a>
-            <a class="nav-link"href="#sobre-mi">Sobre mi</a>
-            <a class="nav-link"href="#contacto">Contacto</a>
+            {
+                ITEMS.map(({text, label, url}) => (
+                    <a class="nav-link" href={url} aria-label={label}>{text}</a>
+                ))
+            }
             <div>
                 <button></button>
                 <div class="hidden">
@@ -16,3 +41,50 @@
             </div>
     </nav>
 </header>
+<script>    
+    
+    
+    
+    
+    document.addEventListener('astro:page-load', () => {
+        const sections = document.querySelectorAll('section')
+        const items = document.querySelectorAll('header nav a')
+        
+        const callback: IntersectionObserverCallback = (entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id')
+                if(entry.isIntersecting){
+                    items.forEach(item => {
+                        if(item.getAttribute('aria-label') == entry.target.id){
+                            item?.classList.add('dark:text-foreground-200', 'hover')                
+                        } else{
+                            item?.classList.remove('dark:text-foreground-200', 'hover')
+                        }
+                    })
+                }
+            })
+        }
+        
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1.0
+        }
+
+        const observer = new IntersectionObserver(callback, options)
+
+        sections.forEach(section => { 
+            observer.observe(section)
+        })
+
+        document.onvisibilitychange = () => {
+            if(document.visibilityState === 'hidden'){
+                observer.disconnect()
+            } else{
+                sections.forEach(section => observer.observe(section))
+            }
+        }
+    })
+
+
+</script>

@@ -40,6 +40,9 @@ export default {
 			navShadown: 'navShadown 1s linear both'
 		}
 		},
+		gridTemplateColumns: {
+			'responsive': 'repeat(auto-fit, minmax(300px, 1fr))'
+		}
 	},
 	plugins: [],
 }

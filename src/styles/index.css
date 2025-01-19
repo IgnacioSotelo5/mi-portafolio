@@ -27,8 +27,27 @@
         content: ''; 
         @apply relative block w-0 h-[2px] top-[22px] bg-foreground-200 transition-all duration-300; 
     } 
+    .nav-link.hover::before { 
+        @apply w-full; 
+    }
     .nav-link:hover::before { 
         @apply w-full; 
+    }
+
+    .listItem{
+        @apply cursor-pointer border-2 border-foreground-200 p-2.5 rounded-full
+    }
+
+    .listItem:hover{
+        @apply bg-foreground-250 text-inherit fill-slate-900
+    }
+
+    .logo{
+        @apply size-6 text-foreground-200
+    }
+
+    .listItem:hover .logo{
+        @apply size-6 dark:text-slate-900 dark:fill-foreground-200;
     }
 
 }

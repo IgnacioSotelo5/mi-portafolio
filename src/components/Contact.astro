@@ -1,0 +1,51 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+import ContactLinks from "./ContactLinks.astro";
+import Github from "./icons/logos/Github.astro";
+import Linkedin from "./icons/logos/Linkedin.astro";
+import WhatsApp from "./icons/logos/WhatsApp.astro";
+import X from "./icons/logos/X.astro";
+import Mail from "./icons/Mail.astro";
+
+interface Link {
+    href: string,
+    logo: (props: Record<string, unknown>) => JSX.Element
+}
+
+const LINKS: Link[] = [
+    {
+        href: 'https://github.com/IgnacioSotelo5',
+        logo: Github
+    },
+    {
+        href: 'https://www.linkedin.com/in/ignaciosotelo8/',
+        logo: Linkedin
+    },
+    {
+        href: 'https://x.com/IgnacioSotelo8',
+        logo: X
+    },
+    {
+        href: 'https://wa.me/5492983588220',
+        logo: WhatsApp
+    },
+    {
+        href: 'mailto:ignaciosotelo8@gmail.com',
+        logo: Mail
+    },
+]
+---
+
+<div class="flex place-self-center">
+    <ul class="flex gap-4">
+        {
+            LINKS.map(({logo: Logo, href}) => (
+                <ContactLinks href={href} class="listItem">
+                    <Logo class="logo"/>
+                </ContactLinks>
+            ))
+        }
+    </ul>
+</div>
+
+
