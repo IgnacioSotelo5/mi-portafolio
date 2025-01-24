@@ -25,19 +25,32 @@ export default {
 			}
 		},
 		keyframes: {
-			navShadown: {
+			navShadownDark: {
 					'0%': { padding: '0 0.5rem' },
-					'100%': { 
-						backgroundColor: 'rgba(71, 85, 105, 0.5)', 
-						padding: '0 12px', 
-						backdropFilter: 'blur(4px)', 
+					'100%': {
+						backgroundColor: 'rgba(71, 85, 105, 0.5)',
+						padding: '0 12px',
+						backdropFilter: 'blur(4px)',
 						zIndex: '30',
 						borderRadius: '9999px'
 					}
 			},
+			navShadownLight: {
+				'0%': { padding: '0 0.5rem', backdropFilter: 'blur(1px)' },
+				'100%': {
+					backgroundColor: 'rgba(225, 225, 255, .8)',
+					padding: '0 12px',
+					backdropFilter: 'blur(3px)',
+					zIndex: '30',
+					borderRadius: '9999px',
+					boxShadow: '0 10px 15px -3px rgb(0 0 0 / .1), 0 4px 6px -4px rgb(0 0 0 / .1)',
+					border: '1px solid #cbd5e1'
+				}
+			}
 		},
 		animation: {
-			navShadown: 'navShadown 1s linear both'
+			navShadownDark: 'navShadownDark 1s linear both',
+			navShadownLight: 'navShadownLight 1s linear both'
 		}
 		},
 		gridTemplateColumns: {

@@ -37,15 +37,15 @@ const LINKS: Link[] = [
 ---
 
 <div class="flex place-self-center">
-    <ul class="flex gap-4">
+    <div class="flex gap-4">
         {
             LINKS.map(({logo: Logo, href}) => (
-                <ContactLinks href={href} class="listItem">
+                <ContactLinks href={href} class="contact-link">
                     <Logo class="logo"/>
                 </ContactLinks>
             ))
         }
-    </ul>
+    </div>
 </div>
 
 

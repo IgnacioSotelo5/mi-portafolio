@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro"
+
 const ITEMS = [
     {   
         text: 'Educación',
@@ -29,16 +31,7 @@ const ITEMS = [
                     <a class="nav-link" href={url} aria-label={label}>{text}</a>
                 ))
             }
-            <div>
-                <button></button>
-                <div class="hidden">
-                    <ul>
-                        <li>Light</li>
-                        <li>Dark</li>
-                        <li>System</li>
-                    </ul>
-                </div>
-            </div>
+            <ThemeToggle />
     </nav>
 </header>
 <script>    
@@ -52,13 +45,12 @@ const ITEMS = [
         
         const callback: IntersectionObserverCallback = (entries) => {
             entries.forEach(entry => {
-                const id = entry.target.getAttribute('id')
                 if(entry.isIntersecting){
                     items.forEach(item => {
                         if(item.getAttribute('aria-label') == entry.target.id){
-                            item?.classList.add('dark:text-foreground-200', 'hover')                
+                            item?.classList.add('text-slate-900', 'dark:text-foreground-200', 'hover')                
                         } else{
-                            item?.classList.remove('dark:text-foreground-200', 'hover')
+                            item?.classList.remove('text-slate-900', 'dark:text-foreground-200', 'hover')
                         }
                     })
                 }

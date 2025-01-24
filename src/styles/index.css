@@ -16,46 +16,48 @@
     }
 
     .skill-item{
-        @apply text-white flex items-center px-2 gap-2 py-0.5 text-sm rounded-full
+        @apply text-current dark:text-white shadow-sm flex items-center px-2.5 gap-2 py-0.5 text-sm rounded-full
     }
 
     .nav-link{
-        @apply before:bg-foreground-200 text-sm dark:text-slate-200 rounded-md relative block p-2 transition-all duration-300 hover:text-blue-500 dark:hover:text-foreground-200
+        @apply before:bg-foreground-200 text-sm text-slate-900 dark:text-slate-200 rounded-md relative block py-2 px-1 transition-all duration-300 hover:text-blue-500 dark:hover:text-foreground-200
     }
 
     .nav-link::before { 
         content: ''; 
-        @apply relative block w-0 h-[2px] top-[22px] bg-foreground-200 transition-all duration-300; 
+        @apply relative block w-0 h-[2px] top-[22px] dark:bg-foreground-200 bg-slate-900 transition-all duration-300; 
     } 
     .nav-link.hover::before { 
         @apply w-full; 
     }
     .nav-link:hover::before { 
-        @apply w-full; 
+        @apply w-full bg-blue-500; 
     }
 
-    .listItem{
-        @apply cursor-pointer border-2 border-foreground-200 p-2.5 rounded-full
+    .contact-link {
+        @apply cursor-pointer border-2 border-sky-800 dark:border-foreground-200 p-2.5 rounded-full;
     }
-
-    .listItem:hover{
-        @apply bg-foreground-250 text-inherit fill-slate-900
+    
+    .contact-link:hover {
+        @apply bg-sky-900 dark:bg-foreground-250 text-inherit dark:fill-slate-900;
     }
-
-    .logo{
-        @apply size-6 text-foreground-200
+    
+    .logo {
+        @apply fill-none transition-all duration-100 z-10 size-6 text-sky-900 dark:text-foreground-200;
     }
-
-    .listItem:hover .logo{
-        @apply size-6 dark:text-slate-900 dark:fill-foreground-200;
+    
+    .contact-link:hover .logo {
+        @apply fill-none text-slate-300 dark:text-slate-900
     }
+    
+    
 
 }
 
 
 @layer utilities {
     .animate-nav-shadown {
-        @apply animate-navShadown;
+        @apply animate-navShadownLight dark:animate-navShadownDark;
         animation-timeline: scroll();
         animation-range: 0 500px;
     }

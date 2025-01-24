@@ -12,7 +12,7 @@ import AstroIcon from "./icons/logos/AstroIcon.astro";
 
 <main>
     <div class="px-4">
-        <SectionContainer id="resumen" class="py-16 md:py-32">
+        <SectionContainer id="resumen" class="py-16 md:py-36">
             <Hero />
         </SectionContainer>
         <div class="space-y-24">
@@ -28,12 +28,10 @@ import AstroIcon from "./icons/logos/AstroIcon.astro";
         </div>
     </div>
     <Banner />
-    <SectionContainer class="bg-slate-900/50 min-w-full py-28 min-h-40 relative" id="contacto">
+    <SectionContainer class="bg-slate-300 dark:bg-slate-900/50 min-w-full md:pt-28 pt-40 pb-8 min-h-40 relative flex flex-col gap-8 justify-between" id="contacto">
         <Contact />
-    </SectionContainer>
-    <SectionContainer class="bg-slate-900/50 py-4 min-w-full">
         <a target="_blank" href="https://astro.build/" class="cursor-pointer flex place-content-center">
-            <p class="opacity-70 text-xs flex items-center gap-2">Made with <span class="grayscale"><AstroIcon class="size-6"/></span></p>
+            <p class="opacity-70 text-xs flex items-center gap-2">Made with <span class="dark:grayscale"><AstroIcon class="size-6"/></span></p>
         </a>
     </SectionContainer>
 </main>

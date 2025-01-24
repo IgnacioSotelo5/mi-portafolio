@@ -61,13 +61,13 @@ const SKILLS: Skill[] = [
     {
         text: 'React',
         icon: ReactIcon,
-        bg: 'bg-blue-500/25',
+        bg: 'bg-sky-200 dark:bg-blue-500/25',
         category: 'frontend'
     },
     {
         text: 'NextJS',
         icon: NextIcon,
-        bg: 'bg-gray-800',
+        bg: 'bg-gray-300 dark:bg-gray-800',
         category: 'frontend'
     },
     {
@@ -106,7 +106,7 @@ const SKILLS: Skill[] = [
 
     <div class="max-w-xl flex flex-col gap-1">
         <div class="flex items-center">
-            <img src="./avatar.webp" alt="Imagen del autor" class="size-32">
+            <img src="./avatar.webp" alt="Imagen del autor" class="size-24 md:size-32">
             <div class="flex flex-col gap-4">
                 <a class="cursor-pointer" target="_blank" href="https://www.linkedin.com/in/ignaciosotelo8/">
                     <Badge>
@@ -114,11 +114,11 @@ const SKILLS: Skill[] = [
                     </Badge>
                 </a>
                 <div class="flex gap-x-3">
-                    <SocialLinks class="group dark:hover:bg-white" href="https://github.com/IgnacioSotelo5">
-                        <GithubIcon class="size-[18px] dark:group-hover:text-black duration-300" />
+                    <SocialLinks class="group hover:bg-black dark:hover:bg-white " href="https://github.com/IgnacioSotelo5">
+                        <GithubIcon class="size-[18px] group-hover:text-white dark:group-hover:text-black duration-300" />
                     </SocialLinks>
-                    <SocialLinks class="dark:hover:bg-blue-500" href="https://www.linkedin.com/in/ignaciosotelo8/">
-                        <LinkedInIcon class="size-[18px] p-[1px] dark:hover:text-white duration-300" />
+                    <SocialLinks class="group hover:bg-blue-500 " href="https://www.linkedin.com/in/ignaciosotelo8/">
+                        <LinkedInIcon class="size-[18px] p-[1px] group-hover:text-white duration-300" />
                     </SocialLinks>
                 </div>
             </div>
@@ -130,7 +130,7 @@ const SKILLS: Skill[] = [
         </div>
         <div>
             <h2 class="text-xl text-pretty w-full tracking-[-0.036em] inline">
-                Soy un <strong class="text-foreground-250">Desarrollador Web</strong>, de Argentina <Arg class="align-[-4px] inline-block" />. Comprometido con el aprendizaje continuo y la mejora constante, me considero una persona curiosa, proactiva y enfocada en generar valor mediante la colaboración en proyectos.
+                Soy un <strong class="text-cyan-700 dark:text-foreground-250">Desarrollador Web</strong>, de Argentina <Arg class="align-[-4px] inline-block" />. Comprometido con el aprendizaje continuo y la mejora constante, me considero una persona curiosa, proactiva y enfocada en generar valor mediante la colaboración en proyectos.
             </h2>
 
         </div>
